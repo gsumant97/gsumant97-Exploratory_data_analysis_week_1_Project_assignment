@@ -12,6 +12,7 @@ subpower[1:1440, "Time"] <- format(subpower[1:1440, "Time"], "2007-02-01 %H:%M:%
 subpower[1441:2880, "Time"] <- format(subpower[1441:2880, "Time"], "2007-02-02 %H:%M:%S")
 
 #Calling the basic plot functions
+png("plot3.png", width = 480, height = 480)
 plot(subpower$Time, subpower$Sub_metering_1, type = "n", xlab = "", ylab = "Energy sub Metering")
 with(subpower, lines(Time, as.numeric(as.character(Sub_metering_1))))
 with(subpower, lines(Time, as.numeric(as.character(Sub_metering_2)), col="red"))
@@ -20,3 +21,4 @@ legend("topright", lty=1, col=c("black", "red", "blue"), legend=c("Sub_metering_
 
 #annotating Graph
 title(main="Enery Sub-Metering")
+dev.off()

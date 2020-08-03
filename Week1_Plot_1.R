@@ -9,10 +9,11 @@ subpower <- subset(power, power$Date=="1/2/2007" | power$Date == "2/2/2007")
 
 
 #Calling the basic plot function
+png("plot1.png", width = 480, height = 480)
 hist(as.numeric(as.character(subpower$Global_active_power)),
      col="red", main = "Global Active Power", xlab = "Global Active Power(Kilowatts)")
 
 #annotating Group
 title(main="Global Active Power")
-
+dev.off()
 

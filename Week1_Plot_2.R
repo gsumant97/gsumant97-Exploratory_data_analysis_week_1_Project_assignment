@@ -12,7 +12,9 @@ subpower[1:1440, "Time"] <- format(subpower[1:1440, "Time"], "2007-02-01 %H:%M:%
 subpower[1441:2880, "Time"] <- format(subpower[1441:2880, "Time"], "2007-02-02 %H:%M:%S")
 
 #calling the basixc plot function
+png("plot2.png", width = 480, height = 480)
 plot(subpower$Time, as.numeric(as.character(subpower$Global_active_power)), type="l", xlab = "", ylab = "Global Active Power (Kilowatts)")
 
 #annotating Graph
 title(main = "Global Active Power Vs Time")
+dev.off()
